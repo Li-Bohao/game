@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONTROL_H
+#define CONTROL_H
 #include <windows.h>
 class Control {
 private:
@@ -39,3 +40,4 @@ public:
 		return instance;
 	}
 };
+#endif

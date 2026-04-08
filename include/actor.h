@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ACTOR_H
+#define ACTOR_H
 #include"element.h"
 #include"control.h"
 class Actor: public Element {
@@ -23,3 +24,4 @@ public:
 		return instance;
 	}
 };
+#endif

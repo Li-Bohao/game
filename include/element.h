@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ELEMENT_H
+#define ELEMENT_H
 #include<utility>
 #include<memory>
 struct Point {
@@ -25,3 +26,4 @@ public:
 	//返回true是仍然存在，返回false是元素消失
 	virtual bool CheckPerFrame(std::pair<std::unique_ptr<Element>, Point>& element_list) = 0;
 };
+#endif

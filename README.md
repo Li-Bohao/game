@@ -1,3 +1,5 @@
+以下都是我自己想到的需要格外注意的一大堆糟烂事里的一小部分，无视即可
+
 Legend of the Secret
 用using为变量类型命别名
 构造函数
@@ -7,3 +9,4 @@ Legend of the Secret
 命名风格？
 配置gitignore
 研究怎么构建
+定义和实现要不要放到一起？
