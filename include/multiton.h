@@ -21,7 +21,6 @@ protected:
 
 public:
     Multiton(const Multiton &) = delete;
-
     Multiton &operator=(const Multiton &) = delete;
     Multiton(Multiton &&) = delete;
     Multiton &operator=(Multiton &&) = delete;
@@ -34,7 +33,6 @@ public:
                 at index {} from class {} exceeds the index limit of {}.",
                                                  order, typeid(T).name(), max));
         }
-
         return m_instances[order];
     }
 };
