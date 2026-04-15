@@ -1,16 +1,12 @@
 #include <utility>
-
+#include "utils.h"
 template <typename T>
-class Singleton
+class Singleton : public NonTransferable
 {
 protected:
     Singleton() = default;
 
 public:
-    Singleton(const Singleton &) = delete;
-    Singleton(Singleton &&) = delete;
-    Singleton &operator=(const Singleton &) = delete;
-    Singleton &operator=(Singleton &&) = delete;
     static T &GetInstance()
     {
         static T instance;

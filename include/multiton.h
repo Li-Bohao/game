@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <format>
 #include <typeinfo>
+#include "utils.h"
 class MultitonOutOfRange : public std::logic_error
 {
 public:
@@ -11,7 +12,7 @@ public:
 };
 template <typename T, size_t max>
     requires(max != 0)
-class Multiton
+class Multiton : public NonTransferable
 {
 private:
     inline static T m_instances[max]{};
@@ -20,11 +21,6 @@ protected:
     Multiton() = default;
 
 public:
-    Multiton(const Multiton &) = delete;
-    Multiton &operator=(const Multiton &) = delete;
-    Multiton(Multiton &&) = delete;
-    Multiton &operator=(Multiton &&) = delete;
-
     static T &GetInstance(size_t order)
     {
         if (order >= max)
