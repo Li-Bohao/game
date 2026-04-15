@@ -14,9 +14,6 @@ template <typename T, size_t max>
     requires(max != 0)
 class Multiton : public NonTransferable
 {
-private:
-    inline static T m_instances[max]{};
-
 protected:
     Multiton() = default;
 
@@ -29,7 +26,8 @@ public:
                 at index {} from class {} exceeds the index limit of {}.",
                                                  order, typeid(T).name(), max));
         }
-        return m_instances[order];
+        static T instances[max];
+        return instances[order];
     }
 };
 #endif
